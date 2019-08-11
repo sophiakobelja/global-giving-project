@@ -69,12 +69,12 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
 #### Program Structure:
 
 ```
-**Entry Point:** pages/index.json
-Page container: pages/GlobalGivingMap.json
-Map container: pages/MapView.json
-List view container: pages/ListView.json
-Projects component: pages/Projects.json
-Project component: pages/Project.json
+**Entry Point:** pages/index.js
+Page container: pages/GlobalGivingMap.js
+Map container: pages/MapView.js
+List view container: pages/ListView.js
+Projects component: pages/Projects.js
+Project component: pages/Project.js
 
 **Redux logic:**
  - actions.js  
