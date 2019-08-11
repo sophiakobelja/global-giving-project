@@ -30,6 +30,7 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
    - Material UI (UI component library)
    - react-simple-maps (Interactable map view)
 
+
 #### Work-Flow:
 
  - Upon **page load**, fetch at least 50 projects  	
@@ -65,6 +66,35 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
 **Quick discussion:**
 	react-simple-maps country nodes do not carry two-letter country codes (as necessary for API requests)--they do, however, denote three-letter country codes
 	*My workaround*: I found a json file online with country latitude/longitude, three-letter country codes, and two-letter country codes. I use this json file to map three-letter country codes to two-letter for use in querying the API 
+
+#### Program Structure:
+
+```**Entry Point:** pages/index.json
+Page container: pages/GlobalGivingMap.json
+Map container: pages/MapView.json
+List view container: pages/ListView.json
+Projects component: pages/Projects.json
+Project component: pages/Project.json
+
+**Redux logic:**
+ - actions.js  
+ - configureStore.js 
+ - reducers.js
+
+API configuration for data fetching: utils/API.js
+
+Static country and map json files: 
+ - world-50m.json (Topo json file
+   used in react-simple-maps component) 
+ - countries.json (I found this online)
+	 - country name
+	 - three-letter code
+	 - two-letter code
+	 - latitude 		
+	 - longitude
+	 - Link: [https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json](https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json)
+
+```
 
 ### Next Version:
 
