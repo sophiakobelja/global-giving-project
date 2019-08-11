@@ -7,8 +7,7 @@ If you don't have Docker installed:
 
     cd global-giving-project
     docker build -t global-giving-project:dev .
-    docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm 
-    global-giving-project:dev
+    docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm global-giving-project:dev
     
 Navigate http://localhost:3001
 
