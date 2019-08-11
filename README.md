@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Run Program
 
-In the project directory, you can run:
+#### To run using Docker (recommended):
+If you don't have Docker installed:
+[https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
 
-### `npm start`
+    cd global-giving-project
+    docker build -t global-giving-project:dev .
+    docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm 
+    global-giving-project:dev
+    
+Navigate http://localhost:3001
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### To run using npm:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+    cd global-giving-project
+    npm install
+    npm run dev
 
-### `npm test`
+Navigate to http://localhost:3000
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Implementation Discussion:
 
-### `npm run build`
+For this programming task, I decided to take an "Apartments.com" approach--display a map view of the data and map it to a list view on the side. 
+#### Technologies Used:
+   - React (Language/Javascript framework to build application)
+   	- Redux (State container to streamline asynchronous requests/actions)
+   	- Axios (Data fetching)
+   	- Material UI (UI component library)
+   	- react-simple-maps (Interactable map view)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Work-Flow:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+ - Upon **page load**, fetch at least 50 projects  	
+	 - (The program is only looking for a minimum of 50 projects, where the latitude and longitude are defined per project) 
+ - **Display projects** 	
+	   - Mark project coordinates on map view 	
+	   - Display projects in list view Display "Load More" button at bottom of list view 	
+		   - On click, the program will fetch and display 10 more projects (given their latitude and longitude are defined)
+	-  **On click project:**
+		- Zoom and center map to project coordinates
+		- Change map project marker color to red
+		- Display project in list view
+		- **Project information:**
+			- Project title
+			- Image
+			- Country
+			- Goal
+			- Funding
+ - **On click country:**
+	 - Zoom and center map to country coordinates
+	 - Fetch projects by country 
+		 - Display projects by country in list view 
+		 - Display projects by country in map view 
+	- On click "Load More" button:
+		- Program will fetch and display 10 more projects (given their latitude and longitude are defined) for the currently viewed country 
+		
+**Additional features:**
+ - Zoom in (Zooms in at a scale of 1.5) 	
+ - Zoom out (Zooms out at a scale of .75) 	
+ - Reset (Resets map to default zoom/center) 	
+ - Pan to drag (This  is built into react-simple-maps)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Quick discussion:**
+	react-simple-maps country nodes do not carry two-letter country codes (as necessary for API requests)--they do, however, denote three-letter country codes
+	*My workaround*: I found a json file online with country latitude/longitude, three-letter country codes, and two-letter country codes. I use this json file to map three-letter country codes to two-letter for use in querying the API 
 
-### `npm run eject`
+### Next Version:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ - Display country labels on map  	
+ - More filtering options in list view, such as:  		
+	 - Dropdown menu of all countries 		
+	 - Search bar (search by country, project, etc.) 	
+- Display more project information
+- Scaling of map project marker icons  		
+	- As map scales, so should the size of the icons  	
+- Styling 		
+	- Country colors indicate how many projects are in that country 		
+	- Project listings should look prettier
+- Zoom 		
+	- Allow pinch-to-zoom and/or mousewheel-to-zoom in map 
+- Load More 		
+	- Instead of button, implement infinite scroll list where upon reaching the bottom of the list, the program automatically loads more projects 	
+- Cache	 		
+	- Utilize cache to save currently loaded projects so that project view is maintained even upon page reload and also improve performance 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
