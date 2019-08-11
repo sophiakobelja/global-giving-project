@@ -64,8 +64,8 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
  - Pan to drag (This  is built into react-simple-maps)
 
 **Quick discussion:**
-	react-simple-maps country nodes do not carry two-letter country codes (as necessary for API requests)--they do, however, denote three-letter country codes
-	*My workaround*: I found a json file online with country latitude/longitude, three-letter country codes, and two-letter country codes. I use this json file to map three-letter country codes to two-letter for use in querying the API 
+	react-simple-maps country nodes do not carry two-letter country codes (as necessary for API requests)--they do, however, denote three-letter country codes.
+*My workaround*: I found a json file online with country latitude/longitude, three-letter country codes, and two-letter country codes. I use this json file to map three-letter country codes to two-letter for use in querying the API 
 
 #### Program Structure:
 
