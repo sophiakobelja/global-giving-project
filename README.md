@@ -25,10 +25,10 @@ Navigate to http://localhost:3000
 For this programming task, I decided to take an "Apartments.com" approach--display a map view of the data and map it to a list view on the side. 
 #### Technologies Used:
    - React (Language/Javascript framework to build application)
-   	- Redux (State container to streamline asynchronous requests/actions)
-   	- Axios (Data fetching)
-   	- Material UI (UI component library)
-   	- react-simple-maps (Interactable map view)
+   - Redux (State container to streamline asynchronous requests/actions)
+   - Axios (Data fetching)
+   - Material UI (UI component library)
+   - react-simple-maps (Interactable map view)
 
 #### Work-Flow:
 
