@@ -34,21 +34,21 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
 
  - Upon **page load**, fetch at least 50 projects  	
 	 - (The program is only looking for a minimum of 50 projects, where the latitude and longitude are defined per project) 
- - **Display projects** 
+- **Display projects** 
  	- Mark project coordinates on map view 	
-	   - Display projects in list view 
-	   - Display "Load More" button at bottom of list view 	
-		   - On click, the program will fetch and display 10 more projects (given their latitude and longitude are defined)
-	-  **On click project:**
-		- Zoom and center map to project coordinates
-		- Change map project marker color to red
-		- Display project in list view
-		- **Project information:**
-			- Project title
-			- Image
-			- Country
-			- Goal
-			- Funding
+	- Display projects in list view 
+	- Display "Load More" button at bottom of list view 
+		- On click, the program will fetch and display 10 more projects (given their latitude and longitude are defined)
+ -  **On click project:**
+	- Zoom and center map to project coordinates
+	- Change map project marker color to red
+	- Display project in list view
+	- **Project information:**
+		- Project title
+		- Image
+		- Country
+		- Goal
+		- Funding
  - **On click country:**
 	 - Zoom and center map to country coordinates
 	 - Fetch projects by country 
