@@ -69,7 +69,8 @@ For this programming task, I decided to take an "Apartments.com" approach--displ
 
 #### Program Structure:
 
-```**Entry Point:** pages/index.json
+```
+**Entry Point:** pages/index.json
 Page container: pages/GlobalGivingMap.json
 Map container: pages/MapView.json
 List view container: pages/ListView.json
