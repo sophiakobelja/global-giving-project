@@ -116,3 +116,8 @@ Static country and map json files:
 - Cache	 		
 	- Utilize cache to save currently loaded projects so that project view is maintained even upon page reload and also improve performance 
 
+### Another quick note:
+Per Kevin and I's discussion, I decided to look into compression options for React. With gzip and some minification, you can reduce the bundle size by 60-70%: 
+https://gist.github.com/Restuta/cda69e50a853aa64912d
+Or use Preact (even better):
+https://blog.logrocket.com/introduction-to-preact-a-smaller-faster-react-alternative-ad5532eb6d79/
